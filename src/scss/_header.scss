@@ -1,0 +1,85 @@
+nav {
+  background: map-get($colors, whiteOpacity);
+  @include flexSACenter;
+  width: $fullSizePercent;
+  position: fixed;
+  z-index: 20;
+  ul {
+    display: none;
+    li {
+      width: $fullSizePercent;
+      a {
+        @include fullSizePercent;
+        padding: 4rem;
+        font-size: 1.5rem;
+      }
+    }
+    li:hover {
+      background: map-get($colors, pink);
+    }
+  }
+  .ulActive {
+    @include flexColumnCenter;
+    width: $fullSizePercent;
+    li {
+      display: flex;
+      a {
+        @include fullSizePercent;
+        cursor: pointer;
+        align-self: stretch;
+        text-transform: uppercase;
+      }
+    }
+  }
+}
+
+.container-menu {
+  cursor: pointer;
+  display: inline-block;
+  align-self: flex-start;
+  padding: 4px;
+}
+
+.bar1, .bar2, .bar3 {
+  width: 35px;
+  height: 5px;
+  background-color: map-get($colors, black);
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+.change {
+  align-self: flex-start;
+}
+
+.change .bar1 {
+  -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+  transform: rotate(-45deg) translate(-9px, 6px);
+}
+
+.change .bar2 {
+  opacity: 0;
+}
+
+.change .bar3 {
+  -webkit-transform: rotate(45deg) translate(-8px, -8px);
+  transform: rotate(45deg) translate(-8px, -8px);
+}
+
+// /* Safari 4.0 - 8.0 */
+// @-webkit-keyframes myfirst {
+//     0%   {color:red; bottom:-30px;}
+//     25%  {color:pink; bottom:-20px;}
+//     50%  {color:blue; bottom:-30px;}
+//     75%  {color:green; bottom:-20px;}
+//     100% {color:red; bottom:-30px;}
+// }
+//
+// /* Standard syntax */
+// @keyframes myfirst {
+//     0%   {color:red; bottom:-30px;}
+//     25%  {color:pink; bottom:-20px;}
+//     50%  {color:blue; bottom:-30px;}
+//     75%  {color:green; bottom:-20px;}
+//     100% {color:red; bottom:-30px;}
+// }

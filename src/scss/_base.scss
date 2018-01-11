@@ -1,0 +1,50 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:400,700,300);
+
+// General styling
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Lato', Arial, sans-serif;
+  box-sizing: border-box;
+}
+
+a:focus, button:focus {
+  outline:0 !important;
+}
+
+body {
+	background: rgba(0,0,0,0.4);
+}
+
+li {
+  list-style: none;
+}
+
+// Loader styling
+.loaderSmall {
+	@include flexCenterCenter;
+  background: map-get($colors, loaderSmallBg);
+  width: $fullSizePercent;
+	height: $fullSizePercent;
+  position: fixed;
+	left: 0px;
+	top: 0px;
+	z-index: 99;
+}
+
+.bg {
+  @include flexColumn;
+  @include bg-top;
+  @include fullSizeWH;
+  padding-top: 60px;
+}
+
+.container {
+  @include fullSizeWH;
+  @include flexColumnCenterCenter;
+}
+
+.wrapper {
+  max-width: $wrapper;
+  margin-top: -200px;
+}

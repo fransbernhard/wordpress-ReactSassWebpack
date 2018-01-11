@@ -1,0 +1,27 @@
+.self-portrait {
+  max-width: 200px;
+  margin-bottom: 2rem;
+  margin-top: -200px;
+}
+
+.contact-container {
+  @include flexColumnCenterCenter;
+  text-align: center;
+  width: 100vw;
+  height: 90%;
+}
+
+.contact-filter {
+  background: map-get($colors, whiteOpacity);
+  padding: 4rem;
+  border-radius: 50%;
+}
+
+.contact-map {
+  width: $fullSizePercent;
+  height: 200px;
+  background: fuchsia;
+  img {
+    max-width: inherit !important;
+  }
+}
