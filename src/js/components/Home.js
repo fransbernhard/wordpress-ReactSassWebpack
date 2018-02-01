@@ -43,7 +43,7 @@ class Home extends Component {
     let acf = pageData.acf; // Advanced Custom Fields data
 
     const divStyle = {
-      backgroundImage: 'url(' + acf.home_page_header_img + ')'
+      backgroundImage: 'url(' + acf.home_header_img + ')'
     }
     const data = acf.gallery;
 
@@ -52,14 +52,14 @@ class Home extends Component {
         <div className="bg" style={divStyle}>
           <h1 className="time-title">{this.state.time}</h1>
           <div className="home-content">
-            <h1>{acf.home_page_header_text}</h1>
-            <p>{acf.home_page_header_desc}</p>
+            <h1>{acf.home_header_text}</h1>
+            <p>{acf.home_header_desc}</p>
             <a className="readMoreLink" href='#section1'>Read more</a>
           </div>
-          <a href='#section1' className="goDown"><img className="goDownImg" src={acf.home_down_array}/></a>
+          <a href='#section1' className="goDown"><img className="goDownImg" src={acf.home_down_arrow}/></a>
         </div>
         <ScrollableAnchor id={'section1'}>
-          <div className="second-section" style={{backgroundImage: `url(${acf.home_page_second_section_img})`}}>
+          <div className="second-section" style={{backgroundImage: `url(${acf.home_second_section_img})`}}>
             <Slider gallery={data}/>
           </div>
         </ScrollableAnchor>

@@ -46,7 +46,7 @@ class App extends Component {
             <div>
               <Header />
               <Switch>
-                <Route path="*" component={Home} exact />
+                <Route path="/" component={Home} exact />
                 {this.buildRoutes(response)}
                 <Route render={() => { return <Redirect to="/" />}} />
               </Switch>

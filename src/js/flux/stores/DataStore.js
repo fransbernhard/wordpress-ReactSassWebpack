@@ -1,7 +1,6 @@
 import alt from '../alt/alt.js';
 import DataActions from '../actions/DataActions.js';
 
-
 class DataStore {
   constructor(){
     this.data = {};
@@ -32,12 +31,12 @@ class DataStore {
 
   // Returns all Pages
   getAllPages() {
-      return this.getState().data.pages;
+    return this.getState().data.pages;
   }
 
   // Returns all Posts
   getAllPosts() {
-      return this.getState().data.posts;
+    return this.getState().data.posts;
   }
 
   // Return page by slug
@@ -55,7 +54,6 @@ class DataStore {
       return posts[post].slug === slug;
     })] || {};
   }
-
 }
 
 export default alt.createStore(DataStore, 'DataStore');

@@ -67,18 +67,7 @@ class Contact extends Component {
         <div className="contact-container">
           <div className="contact-filter">
             <img className="self-portrait" src={acf.self_portrait}/>
-            <p>
-              {acf.name}</p>
-              <a href="mailto:{acf.email}">{acf.email}</a>
-              <p>{acf.phone}<br/>
-              {acf.adress}<br/>
-              {acf.zip_code}, {acf.city}<br/>
-            </p>
-          </div>
-          <div className="contact-map">
-            <p>{acf.contact_map.address}</p>
-            <p>{acf.contact_map.lng}</p>
-            <p>{acf.contact_map.lat}</p>
+            {acf.contact_info}
           </div>
         </div>
       </div>
@@ -90,3 +79,10 @@ export default Contact;
 
 // <div className="marker">*</div>
 // {this.new_map()}
+
+
+// <div className="contact-map">
+//   <p>{acf.contact_map.address}</p>
+//   <p>{acf.contact_map.lng}</p>
+//   <p>{acf.contact_map.lat}</p>
+// </div>

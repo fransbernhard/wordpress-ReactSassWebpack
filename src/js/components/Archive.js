@@ -22,7 +22,7 @@ class Archive extends Component {
     return (
       <div className="bg" style={divStyle}>
         <div className="post-container">
-          <h1 className="archive-header">{acf.achive_title}</h1>
+          <h1 className="archive-header">{acf.archive_title}</h1>
           <div className="post-wrapper">
             {
               allPosts.map((post, i) =>
