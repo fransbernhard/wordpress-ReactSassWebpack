@@ -26,6 +26,7 @@ class Header extends Component {
     allPages = _.sortBy(allPages, [ function(page){
       page.menu_order; // Sort pages by order
     }])
+    allPages.splice(allPages[1], 1); // Remove Search page
 
     return(
       <nav>

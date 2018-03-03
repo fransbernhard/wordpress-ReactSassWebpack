@@ -72,7 +72,7 @@ const config = {
 					loader: 'file-loader',
 					options: {
 						name: '[path][name].[ext]'
-					} 
+					}
 				}]
 			},
       {
@@ -93,10 +93,7 @@ const config = {
 			}
     ]
   },
-  plugins: plugins,
-	externals: {
-	  jquery: 'jQuery'
-	}
+  plugins: plugins
 }
 
 module.exports = config;

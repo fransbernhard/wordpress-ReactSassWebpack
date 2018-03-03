@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dev-server --inline --progress --config webpack.config.js --host 127.0.0.1 --port 5000 --open",
+    "start": "webpack-dev-server --inline --progress --config webpack.config.js --host 127.0.0.1 --port 8080 --open",
     "build": "npm run clean && webpack -p --progress --config webpack.config.prod.js",
     "clean": "rimraf ./dist/*"
   },

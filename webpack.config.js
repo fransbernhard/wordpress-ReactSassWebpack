@@ -3,7 +3,7 @@ const path = require('path');
 
 const entry = [
   // 'babel-polyfill',
-  'webpack-dev-server/client?http://127.0.0.1:5000', // Specify the local server port
+  'webpack-dev-server/client?http://127.0.0.1:8080', // Specify the local server port
   'webpack/hot/only-dev-server', // Enable hot reloading
   './app.js' // Where webpack will be looking for entry index.js file
 ];

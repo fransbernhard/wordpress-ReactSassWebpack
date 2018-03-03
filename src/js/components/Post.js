@@ -2,46 +2,42 @@ import DataStore from '../flux/stores/DataStore.js'
 import React, { Component } from 'react';
 import Single from './Single';
 
-import {
-    BrowserRouter as Router,
-    Route,
-    Redirect,
-    Switch
-} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 class Post extends Component {
-  constructor(props){
-    super(props);
 
-  }
-
-  openSingle(slug, id){
-    console.log('slug: ' + slug)
-    console.log('id: ' + id)
-    return <Single postSlug={slug}/>
-  }
 
   render() {
     let post = this.props.post;
+    console.log(post);
 
     return (
-      <div>
-        <div className="post" key={post.i} onClick={() => this.openSingle(post.slug, post.id)}>
+      <Link to={`/archive/${post.slug}`} params={{slug: post.slug}}>
+        <div className="post" key={post.i} >
           { post.featured_image_src
-            ? <a href={post.link} className="post-link">
-                <div className="post-img" style={{backgroundImage: `url(${post.featured_image_src})`}}/>
-              </a>
+            ? <div className="post-img" style={{backgroundImage: `url(${post.featured_image_src})`}}/>
             : null
           }
           <h3 className="post-title">{post.title.rendered}</h3>
         </div>
-      </div>
+      </Link>
     );
   }
 
 }
 
 export default Post;
+
+// <div className="post" key={post.i} >
+//   { post.featured_image_src
+//     ? <a href={post.link} className="post-link">
+//         <div className="post-img" style={{backgroundImage: `url(${post.featured_image_src})`}}/>
+//       </a>
+//     : null
+//   }
+//   <h3 className="post-title">{post.title.rendered}</h3>
+// </div>
+
 
 // <div className="post" key={post.i} onClick={() => this.openModal()}>
 //   { post.featured_image_src
@@ -54,3 +50,13 @@ export default Post;
 //   dangerouslySetInnerHTML={{__html:post.title.rendered}}
 //   /></h3>
 // </div>
+
+// constructor(props){
+//   super(props);
+// }
+
+// openSingle(slug, id){
+//   console.log('slug: ' + slug)
+//   console.log('id: ' + id)
+//   return <Single postSlug={slug}/>
+// }

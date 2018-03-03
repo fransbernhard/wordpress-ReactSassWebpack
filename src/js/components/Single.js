@@ -2,17 +2,21 @@ import DataStore from '../flux/stores/DataStore.js'
 import React, { Component } from 'react';
 
 class Single extends Component {
-
   render() {
-    console.log("posts: " + this.props.pageSlug);
+    console.log("POSTSLUG: " + this.props.location.pathname);
+    var parts = this.props.location.pathname.split('/');
+    var lastSegment = parts.pop() || parts.pop();  // handle potential trailing slash
+    console.log(lastSegment);
 
-    let post = DataStore.getPostBySlug(this.props.pageSlug);
+    let post = DataStore.getPostBySlug(lastSegment);
     let acf = post.acf;
 
     return (
-      <div>
-        <h1>hejhej</h1>
-        <div>{acf.post_content}</div>
+      <div className="single-container">
+        <div className="single-wrapper">
+          <h1>{post.title.rendered}</h1>
+          <img src={post.featured_image_src} className="yes"/>
+        </div>
       </div>
     );
   }

@@ -3,13 +3,6 @@ import React, { Component } from 'react';
 import Post from './Post';
 
 class Archive extends Component {
-  constructor(props){
-    super(props);
-    this.state = {
-      posts: []
-    }
-  }
-
   render() {
     let allPosts = DataStore.getAllPosts();
     let page = DataStore.getPageBySlug('archive');

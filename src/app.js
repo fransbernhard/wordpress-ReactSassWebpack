@@ -6,6 +6,7 @@ import Home from './js/components/Home.js';
 import About from './js/components/About.js';
 import Archive from './js/components/Archive.js';
 import Header from './js/components/Header.js';
+import Single from './js/components/Single.js';
 import Footer from './js/components/Footer.js';
 import Contact from './js/components/Contact.js';
 import React, { Component } from 'react';
@@ -22,17 +23,30 @@ class App extends Component {
   templates = {
     'about': About,
     'contact': Contact,
-    'archive': Archive
+    'archive': Archive,
+    'single': Single
   }
 
   buildRoutes(data){
     return data.pages.map((page, i) => {
-      return(
+      return (
         <Route
           key={i}
           component={this.templates[page.slug]}
           path={`/${page.slug}`}
           exact
+        />
+      )
+    })
+  }
+
+  buildPostRoutes(data){
+    return data.posts.map((post,i) => {
+      return (
+        <Route
+          key={i}
+          component={this.templates.single}
+          path={`/archive/${post.slug}`}
         />
       )
     })
@@ -48,6 +62,7 @@ class App extends Component {
               <Switch>
                 <Route path="/" component={Home} exact />
                 {this.buildRoutes(response)}
+                {this.buildPostRoutes(response)}
                 <Route render={() => { return <Redirect to="/" />}} />
               </Switch>
               <Footer />
@@ -58,7 +73,6 @@ class App extends Component {
       );
     });
   }
-
 }
 
 new App().run();

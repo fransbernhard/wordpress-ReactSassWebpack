@@ -8,7 +8,7 @@ class DataActions {
     this.postsEndPoint = `${appUrl}/wp-json/wp/v2/posts?per_page=30`;
   }
 
-  // Asynchronous = This lets asynchronous methods return values like synchronous methods: instead of immediately returning the final value, the asynchronous method returns a promise to supply the value at some point in the future.
+  // Asynchronous = instead of immediately returning the final value, the asynchronous method returns a promise to supply the value at some point in the future.
   // A Promise is in one of these states:
   // pending: initial state, neither fulfilled nor rejected.
   // fulfilled: meaning that the operation completed successfully.

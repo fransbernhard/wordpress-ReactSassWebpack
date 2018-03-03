@@ -29,13 +29,16 @@ class Home extends Component {
   }
 
   tick() {
-    let hm = new Date();
-    var h = hm.getHours();
-    var m = hm.getMinutes();
-    var s = hm.getSeconds();
+    const d = new Date();
+    const time = ("0" + d.getHours()).slice(-2) + ':' + ("0" + d.getMinutes()).slice(-2) + ':' + ("0" + d.getSeconds()).slice(-2);
+    const date = [("0" + d.getDate()).slice(-2),
+      ("0" + (d.getMonth() + 1)).slice(-2),
+      ("0" + d.getFullYear()).slice(-2)].join(' / ');
+
     this.setState({
-      time: h + ":" + m + ":" + s
+      time: [date, time].join(' ')
     });
+
   }
 
   render(){
