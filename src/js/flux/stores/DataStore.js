@@ -3,12 +3,12 @@ import DataActions from '../actions/DataActions.js';
 
 class DataStore {
   constructor(){
-    this.data = {};
+    this.data = {}
 
     // Listen to the getSuccess() in DataActions.js
     this.bindListeners({
       handleSuccess: DataActions.GET_SUCCESS
-    });
+    })
 
     this.exportPublicMethods({
       getAll: this.getAll,
@@ -16,7 +16,7 @@ class DataStore {
       getAllPosts: this.getAllPosts,
       getPageBySlug: this.getPageBySlug,
       getPostBySlug: this.getPostBySlug
-    });
+    })
   }
 
   //Store data returned by getSuccess() in DataActions.js

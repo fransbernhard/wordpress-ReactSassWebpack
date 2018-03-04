@@ -53,6 +53,7 @@ class Header extends Component {
               )
             }
           })}
+          <li onClick={this.addActiveClass}><Link to="/instagram">Instagram</Link></li>
         </ul>
       </nav>
     );

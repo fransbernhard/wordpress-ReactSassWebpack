@@ -9,6 +9,7 @@ import Header from './js/components/Header.js';
 import Single from './js/components/Single.js';
 import Footer from './js/components/Footer.js';
 import Contact from './js/components/Contact.js';
+import Instagram from './js/components/Instagram.js';
 import React, { Component } from 'react';
 
 import {
@@ -63,6 +64,7 @@ class App extends Component {
                 <Route path="/" component={Home} exact />
                 {this.buildRoutes(response)}
                 {this.buildPostRoutes(response)}
+                <Route component={Instagram} path="/instagram" />
                 <Route render={() => { return <Redirect to="/" />}} />
               </Switch>
               <Footer />
