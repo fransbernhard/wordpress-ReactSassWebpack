@@ -4,7 +4,7 @@ import ScrollableAnchor from 'react-scrollable-anchor';
 import { configureAnchors } from 'react-scrollable-anchor';
 import Slider from './Slider';
 
-configureAnchors({scrollDuration: 1000}); // Offset all anchors by -60 to account for a fixed header and scroll more quickly than the default 400ms
+configureAnchors({scrollDuration: 1000});
 
 class Home extends Component {
 
@@ -17,7 +17,6 @@ class Home extends Component {
 
   componentDidMount(){
     this.tick();
-
     this.intervalID = setInterval(
       () => this.tick(),
       1000

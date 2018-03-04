@@ -14,12 +14,13 @@ class Instagram extends Component {
       method: "GET",
       headers: {
         'Content-Type':'application/x-www-form-urlencoded',
-        // 'Content-Type': 'application/json', // send json
         'Accept': 'application/json' // recieve json
       }
     };
 
-    
+    const token = YOUR_TOKEN
+    const userId = YOUR_USER_ID
+    const count = 20
 
     fetch('https://api.instagram.com/v1/users/' + userId + '/media/recent/?access_token=' + token + '&count=' + count, myInit)
       .then((res) => {
@@ -48,6 +49,5 @@ class Instagram extends Component {
     )
   }
 }
-
 
 export default Instagram;

@@ -45,19 +45,6 @@ class Post extends Component {
   closeModal() {
     this.setState({ isModalOpen: false })
   }
-
 }
 
 export default Post;
-
-// <div className="post" key={post.i} onClick={() => this.openModal()}>
-//   { post.featured_image_src
-//     ? <a href={post.link} className="post-link">
-//         <div className="post-img" style={{backgroundImage: `url(${post.featured_image_src})`}}/>
-//       </a>
-//     : null
-//   }
-//   <h3 className="post-title"><a href={post.link}
-//   dangerouslySetInnerHTML={{__html:post.title.rendered}}
-//   /></h3>
-// </div>

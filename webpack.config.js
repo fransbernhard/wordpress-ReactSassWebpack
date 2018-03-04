@@ -2,14 +2,13 @@ const webpack = require('webpack');
 const path = require('path');
 
 const entry = [
-  // 'babel-polyfill',
   'webpack-dev-server/client?http://127.0.0.1:8080', // Specify the local server port
   'webpack/hot/only-dev-server', // Enable hot reloading
   './app.js' // Where webpack will be looking for entry index.js file
 ];
 
 const output = {
-  path: path.join(__dirname, 'dist'), // This is used to specify folder for producion bundle
+  path: path.join(__dirname, 'dist'), // Specify folder for producion bundle
   publicPath: '/dist',
   filename: 'bundle.min.js'
 }
@@ -17,9 +16,7 @@ const output = {
 const plugins = [
   new webpack.HotModuleReplacementPlugin(), // Hot reloading
 	new webpack.NoEmitOnErrorsPlugin(), // Webpack will let you know if there are any errors
-
-	// Declare global variables
-	new webpack.ProvidePlugin({
+	new webpack.ProvidePlugin({ // Declare global variables
 		React: 'react',
 		ReactDOM: 'react-dom',
 		_: 'lodash'
@@ -32,7 +29,7 @@ const config = {
   output: output,
   devtool: 'inline-source-map',
 	devServer: {
-		historyApiFallback: true, // This will make the server understand "/some-link" routs instead of "/#/some-link"
+		historyApiFallback: true, // Make server understand "/some-link" routs instead of "/#/some-link"
 	},
   module: {
     rules: [

@@ -4,27 +4,22 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const entry = {
-  app: path.join(process.cwd(), 'src/app.js') // Where webpack will be looking for entry app.js file
+  app: path.join(process.cwd(), 'src/app.js')
 };
 
 const output = {
-  path: path.join(__dirname, 'dist'), // This is used to specify folder for producion bundle
-  // publicPath: '/dist',
-  filename: 'bundle.min.js' // Filename for production bundle
+  path: path.join(__dirname, 'dist'),
+  filename: 'bundle.min.js'
 }
 
 const plugins = [
 	new webpack.NoEmitOnErrorsPlugin(), // Webpack will let you know if there are any errors
-
-	// Declare global variables
-	new webpack.ProvidePlugin({
+	new webpack.ProvidePlugin({ // Declare global variables
 		React: 'react',
 		ReactDOM: 'react-dom',
 		_: 'lodash'
 	}),
-
-  new ExtractTextPlugin('bundle.css'), // extract you css into seperate file files to serve your webpack bundles
-
+  new ExtractTextPlugin('bundle.css'), // Extract css into seperate file file
   new HtmlWebpackPlugin({
     filename: 'index-template.html',
     template: './index-template.html',
@@ -54,9 +49,9 @@ const config = {
   context: path.join(__dirname, 'src'),
   entry: entry,
   devtool: 'source-map',
-	devServer: {
-		historyApiFallback: true, // This will make the server understand "/some-link" routs instead of "/#/some-link"
-	},
+	// devServer: {
+	// 	historyApiFallback: true, // Make the server understand "/some-link" routs instead of "/#/some-link"
+	// },
   output: output,
   module: {
     rules: [

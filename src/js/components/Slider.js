@@ -48,8 +48,6 @@ class Slider extends Component {
     })
   }
 
-  // <img className="slide-img" src={data[this.state.sliderIndex].url} alt={data.title} />
-
   render(){
     const data = this.state.sliderData
 
