@@ -42,7 +42,6 @@ class Slider extends Component {
     }
 
     slides[asd].style.display = "flex"
-
     this.setState({
       sliderIndex: asd
     })

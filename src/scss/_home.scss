@@ -95,3 +95,24 @@
 .goDownImg {
   width: 60px;
 }
+
+.cookies-form {
+	background: rgba(0, 0, 0, 0.45);
+	margin-top: 3rem;
+	padding: 1rem;
+	border-radius: 4px;
+	@include flexColumnCenterCenter;
+	h1 {
+		color: white;
+		font-family: cursive;
+	}
+}
+
+.name-form {
+	input {
+		padding: 0.5rem;
+		border: none;
+		margin: 0.2rem;
+		outline: none;
+	}
+}

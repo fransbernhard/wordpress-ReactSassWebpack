@@ -6,6 +6,7 @@ import {
     Redirect,
     Switch
 } from 'react-router-dom';
+import { CookiesProvider } from 'react-cookie';
 
 import DataActions from './js/flux/actions/DataActions.js';
 import './app.scss';
@@ -57,19 +58,21 @@ class App extends Component {
     DataActions.getPages((response) => {
       render(
         <div>
-          <Router>
-            <div>
-              <Header />
-              <Switch>
-                <Route path="/" component={Home} exact />
-                {this.buildRoutes(response)}
-                {this.buildPostRoutes(response)}
-                <Route component={Instagram} path="/instagram" />
-                <Route render={() => { return <Redirect to="/" />}} />
-              </Switch>
-              <Footer />
-            </div>
-          </Router>
+          <CookiesProvider>
+            <Router>
+              <div>
+                <Header />
+                <Switch>
+                  <Route path="/" component={Home} exact />
+                  {this.buildRoutes(response)}
+                  {this.buildPostRoutes(response)}
+                  <Route component={Instagram} path="/instagram" />
+                  <Route render={() => { return <Redirect to="/" />}} />
+                </Switch>
+                <Footer />
+              </div>
+            </Router>
+          </CookiesProvider>
         </div>
         , document.getElementById('app')
       );

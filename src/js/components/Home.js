@@ -4,15 +4,25 @@ import ScrollableAnchor from 'react-scrollable-anchor';
 import { configureAnchors } from 'react-scrollable-anchor';
 import Slider from './Slider';
 
+import { withCookies, Cookies } from 'react-cookie';
+import NameForm from './NameForm';
+
 configureAnchors({scrollDuration: 1000});
 
 class Home extends Component {
-
-  constructor(props){
-    super(props);
+  constructor(){
+    super();
     this.state = {
-      time: null
+      time: null,
+      name: null
     }
+  }
+
+  componentWillMount() {
+    const { cookies } = this.props;
+    this.setState({
+      name: cookies.get('name') || 'Stranger'
+    })
   }
 
   componentDidMount(){
@@ -37,17 +47,15 @@ class Home extends Component {
     this.setState({
       time: [date, time].join(' ')
     });
-
   }
 
   render(){
     let pageData = DataStore.getPageBySlug('home');
     let acf = pageData.acf; // Advanced Custom Fields data
-
-    const divStyle = {
-      backgroundImage: 'url(' + acf.home_header_img + ')'
-    }
+    const divStyle = {backgroundImage: 'url(' + acf.home_header_img + ')'}
     const data = acf.gallery;
+
+    const { name } = this.state;
 
     return (
       <div>
@@ -58,6 +66,12 @@ class Home extends Component {
             <p>{acf.home_header_desc}</p>
             <a className="readMoreLink" href='#section1'>Read more</a>
           </div>
+
+          <div className="cookies-form">
+            <NameForm name={name}/>
+            {this.state.name && <h1>Hello {this.state.name}!</h1>}
+          </div>
+
           <a href='#section1' className="goDown"><img className="goDownImg" src={acf.home_down_arrow}/></a>
         </div>
         <ScrollableAnchor id={'section1'}>
@@ -70,23 +84,4 @@ class Home extends Component {
   }
 }
 
-export default Home;
-
-// let loc = '-36.848461, 174.763336';
-// let targetDate = new Date();
-// let timestamp = targetDate.getTime()/1000 + targetDate.getTimezoneOffset() * 60;
-// let apiKey = 'AIzaSyD3mH6hZFI8QXnm6wvPrgfYl3CLraHbjS4';
-// let apiCall = 'https://maps.googleapis.com/maps/api/timezone/json?location=' + loc + '&timestamp=' + timestamp + '&key=' + apiKey;
-//
-// fetch(apiCall)
-//   .then(res => {
-//     return res.json();
-//   }).then(data => {
-//     var offsets = data.dstOffset * 1000 + data.rawOffset * 1000;
-//     var localdate = new Date(timestamp * 1000 + offsets);
-//
-//     this.setState({
-//       time: data.timeZoneId + ", " + localdate.toLocaleString()
-//     });
-//     console.log("state: " + this.state.time)
-//   })
+export default withCookies(Home);
