@@ -105,3 +105,34 @@ ReactDOM.render (
   <App/>,
   document.getElementById('app')
 )
+
+// <div className="loaderSmall" id="loaderSmall">
+//   <div className="pixel-loader"></div>
+// </div>
+
+// constructor(props) {
+//   super(props);
+//   this.handleLoad = this.handleLoad.bind(this);
+// }
+
+// // When Component has rendered, window.addEventListener adds event "load" and calls handleLoad function
+// componentDidMount() {
+//   console.log("CONSOLED");
+//   window.addEventListener('load', this.handleLoad)
+// }
+//
+// // Fade out site-loader
+// handleLoad() {
+//   console.log("CALLED");
+//   var fadeTarget = document.getElementById('loaderSmall');
+//   var fadeEffect = setInterval(function () {
+//     if (!fadeTarget.style.opacity) {
+//         fadeTarget.style.opacity = 1;
+//     }
+//     if (fadeTarget.style.opacity < 0.1) {
+//         clearInterval(fadeEffect);
+//     } else {
+//         fadeTarget.style.opacity -= 0.1;
+//     }
+//   }, 1000);
+// }

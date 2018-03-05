@@ -1,4 +1,12 @@
 import {render} from 'react-dom';
+import React, { Component } from 'react';
+import {
+    BrowserRouter as Router,
+    Route,
+    Redirect,
+    Switch
+} from 'react-router-dom';
+
 import DataActions from './js/flux/actions/DataActions.js';
 import './app.scss';
 
@@ -10,14 +18,6 @@ import Single from './js/components/Single.js';
 import Footer from './js/components/Footer.js';
 import Contact from './js/components/Contact.js';
 import Instagram from './js/components/Instagram.js';
-import React, { Component } from 'react';
-
-import {
-    BrowserRouter as Router,
-    Route,
-    Redirect,
-    Switch
-} from 'react-router-dom';
 
 class App extends Component {
 
@@ -78,34 +78,3 @@ class App extends Component {
 }
 
 new App().run();
-
-// <div className="loaderSmall" id="loaderSmall">
-//   <div className="pixel-loader"></div>
-// </div>
-
-// constructor(props) {
-//   super(props);
-//   this.handleLoad = this.handleLoad.bind(this);
-// }
-
-// // When Component has rendered, window.addEventListener adds event "load" and calls handleLoad function
-// componentDidMount() {
-//   console.log("CONSOLED");
-//   window.addEventListener('load', this.handleLoad)
-// }
-//
-// // Fade out site-loader
-// handleLoad() {
-//   console.log("CALLED");
-//   var fadeTarget = document.getElementById('loaderSmall');
-//   var fadeEffect = setInterval(function () {
-//     if (!fadeTarget.style.opacity) {
-//         fadeTarget.style.opacity = 1;
-//     }
-//     if (fadeTarget.style.opacity < 0.1) {
-//         clearInterval(fadeEffect);
-//     } else {
-//         fadeTarget.style.opacity -= 0.1;
-//     }
-//   }, 1000);
-// }

@@ -20,9 +20,6 @@
 	width: 80vw;
 	height: 70vh;
 	@include bg;
-	// @include respond-to(medium) {
-  //   width: 80vw;
-  // }
 }
 
 .prev-next-container {
