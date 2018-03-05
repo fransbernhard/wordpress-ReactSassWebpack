@@ -13,9 +13,9 @@ import './app.scss';
 import Home from './js/components/Home.js';
 import About from './js/components/About.js';
 import Archive from './js/components/Archive.js';
-import Header from './js/components/Header.js';
+import Header from './js/components/common/Header.js';
 import Single from './js/components/Single.js';
-import Footer from './js/components/Footer.js';
+import Footer from './js/components/common/Footer.js';
 import Contact from './js/components/Contact.js';
 import Instagram from './js/components/Instagram.js';
 

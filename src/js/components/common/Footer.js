@@ -1,9 +1,9 @@
-import DataStore from '../flux/stores/DataStore.js'
+import DataStore from '../../flux/stores/DataStore.js'
 import React, { Component } from 'react';
-import instagram from '../../img/instagram.png';
-import linkedin from '../../img/linkedin.png';
-import github from '../../img/git.png';
-import stack from '../../img/stack.png';
+import instagram from '../../../img/instagram.png';
+import linkedin from '../../../img/linkedin.png';
+import github from '../../../img/git.png';
+import stack from '../../../img/stack.png';
 
 class Footer extends Component {
   render() {

@@ -19,22 +19,21 @@ class DataStore {
     })
   }
 
-  //Store data returned by getSuccess() in DataActions.js
+  // Store data returned by DataActions.getSuccess()
   handleSuccess(data){
     this.setState({ data });
   }
 
-  // Returns all pages and posts
   getAll(){
     return this.getState().data.pages;
   }
 
-  // Returns all Pages
+  // Return all Pages
   getAllPages() {
     return this.getState().data.pages;
   }
 
-  // Returns all Posts
+  // Return all Posts
   getAllPosts() {
     return this.getState().data.posts;
   }
